@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="articles"
+            type="com.example.newsapp.ArticlesItem" />
+
+        <variable
+        name="title"
+        type= "String" />
+
+        <variable
+            name="desc"
+            type= "String" />
+
+        <variable
+            name="imageUrl"
+            type= "String" />
+
+        <variable
+            name="clickHandler"
+            type= "com.example.newsapp.NewsRecyclerViewAdapter.ClickHandler" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:onClick="@{(view)->clickHandler.onArticleClick(view, articles)}"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_margin="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    loadImageFromUrl="@{imageUrl}"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:maxLines="2"
+                            android:text="Title: "
+                            android:fontFamily="sans-serif-black"
+                            android:layout_margin="4dp"
+                            tools:text="blabla"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:maxLines="2"
+                            android:text="@{title}"
+                            android:layout_margin="4dp"
+                            tools:text="blabla"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:maxLines="2"
+                            android:text="Description: "
+                            android:fontFamily="sans-serif-black"
+                            android:layout_margin="4dp"
+                            tools:text="blabla"
+                            android:layout_marginStart="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    <TextView
+                        android:maxLines="2"
+                        android:text="@{desc}"
+                        android:layout_margin="4dp"
+                        android:layout_marginStart="24dp"
+                        tools:text="blabla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</layout>
