@@ -3,7 +3,7 @@ package com.example.newsapp
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class NewsPojo(
+data class NewsModel(
 
 	@field:SerializedName("totalResults")
 	@Expose

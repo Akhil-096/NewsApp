@@ -3,15 +3,14 @@ package com.example.newsapp
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.newsapp.NewsPojo
 import com.example.newsapp.NewsRepository
 
 class NewsViewModel(application: Application) : AndroidViewModel(application) {
 
-private val mutableLiveData : MutableLiveData<NewsPojo> = MutableLiveData<NewsPojo>()
-    private val newsRepository : NewsRepository = NewsRepository(getApplication())
+private val mutableLiveData : MutableLiveData<NewsModel> = MutableLiveData<NewsModel>()
+    private val newsRepository : NewsRepository = NewsRepository()
 
-    fun getNewsData(): MutableLiveData<NewsPojo> {
+    fun getNewsData(): MutableLiveData<NewsModel> {
         return mutableLiveData
     }
 

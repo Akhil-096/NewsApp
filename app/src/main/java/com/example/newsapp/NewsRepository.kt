@@ -7,21 +7,21 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewsRepository(context: Context) {
+class NewsRepository {
 
     private val newsApi: NewsApi = RetrofitClient.createService(NewsApi::class.java)
 
-    fun getNewsData(q:String, from:String,sortBy:String,apiKey:String, mutableLiveData : MutableLiveData<NewsPojo> ) {
-        newsApi.newsData(q, from, sortBy, apiKey)?.enqueue(object : Callback<NewsPojo?> {
+    fun getNewsData(q:String, from:String,sortBy:String,apiKey:String, mutableLiveData : MutableLiveData<NewsModel> ) {
+        newsApi.newsData(q, from, sortBy, apiKey)?.enqueue(object : Callback<NewsModel?> {
 
-            override fun onResponse(call: Call<NewsPojo?>?, response: Response<NewsPojo?>?) {
+            override fun onResponse(call: Call<NewsModel?>?, response: Response<NewsModel?>?) {
                 if(response?.body()?.status.equals("ok")){
                     Log.e("tag01", "onResponse: "+ response?.body()?.articles)
                 }
                 mutableLiveData.postValue(response?.body())
             }
 
-            override fun onFailure(call: Call<NewsPojo?>?, t: Throwable?) {
+            override fun onFailure(call: Call<NewsModel?>?, t: Throwable?) {
                 TODO("Not yet implemented")
             }
         })
