@@ -20,7 +20,7 @@ class NewsActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.news_activity)
         newsViewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
-        newsViewModel.getNewsDataFromServer("tesla", "2021-09-02","publishedAt", "7df876678d8c4bc8b77a2ba0d885bd53")
+        newsViewModel.getNewsDataFromServer("tesla", "2021-09-14","publishedAt", "7df876678d8c4bc8b77a2ba0d885bd53")
         recyclerView = binding.recyclerView
         observeLiveData()
 
@@ -33,7 +33,6 @@ class NewsActivity : AppCompatActivity() {
 
             recyclerView.layoutManager = LinearLayoutManager(this)
             recyclerView.adapter = NewsRecyclerViewAdapter(this, it.articles)
-
 
 
         })
