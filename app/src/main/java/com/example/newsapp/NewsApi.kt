@@ -7,6 +7,6 @@ import retrofit2.http.Query
 interface NewsApi {
 
     @GET("everything")
-    fun newsData(@Query("q") q:String,@Query("from") from:String,@Query("sortBy") sortBy:String,@Query("apiKey") apiKey:String): Call<NewsModel?>?
+    fun newsData(@Query("q") q:String,@Query("from") from:String,@Query("to") to:String,@Query("sortBy") sortBy:String,@Query("apiKey") apiKey:String): Call<NewsModel?>?
 
 }

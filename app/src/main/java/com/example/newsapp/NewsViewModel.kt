@@ -14,9 +14,9 @@ private val mutableLiveData : MutableLiveData<NewsModel> = MutableLiveData<NewsM
         return mutableLiveData
     }
 
-    fun getNewsDataFromServer(q:String,from:String,sortBy:String,apiKey:String) {
+    fun getNewsDataFromServer(q:String,from:String,to:String,sortBy:String,apiKey:String) {
 
-        newsRepository.getNewsData(q,from,sortBy,apiKey,mutableLiveData)
+        newsRepository.getNewsData(q,from,to,sortBy,apiKey,mutableLiveData)
 
     }
 

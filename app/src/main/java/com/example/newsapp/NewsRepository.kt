@@ -11,8 +11,8 @@ class NewsRepository {
 
     private val newsApi: NewsApi = RetrofitClient.createService(NewsApi::class.java)
 
-    fun getNewsData(q:String, from:String,sortBy:String,apiKey:String, mutableLiveData : MutableLiveData<NewsModel> ) {
-        newsApi.newsData(q, from, sortBy, apiKey)?.enqueue(object : Callback<NewsModel?> {
+    fun getNewsData(q:String, from:String,to:String,sortBy:String,apiKey:String, mutableLiveData : MutableLiveData<NewsModel> ) {
+        newsApi.newsData(q, from, to, sortBy, apiKey)?.enqueue(object : Callback<NewsModel?> {
 
             override fun onResponse(call: Call<NewsModel?>?, response: Response<NewsModel?>?) {
                 if(response?.body()?.status.equals("ok")){
