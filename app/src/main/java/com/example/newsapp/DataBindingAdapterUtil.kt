@@ -12,10 +12,20 @@ object DataBindingAdapterUtil {
     @BindingAdapter("loadImageFromUrl")
     fun loadImageFromUrl(imageView: ImageView?, imageURL: String?) {
 
-        Glide.with(imageView!!)
-            .load(imageURL)
-            .centerCrop()
-            .into(imageView)
+        if (!imageURL.isNullOrEmpty() || !imageURL.isNullOrBlank()) {
+
+            Glide.with(imageView!!)
+                .load(imageURL)
+                .centerCrop()
+                .into(imageView)
+
+        } else {
+
+            imageView?.setImageResource(R.drawable.img2)
+
+        }
+
+
     }
 
 }

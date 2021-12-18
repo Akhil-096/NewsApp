@@ -42,6 +42,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:scaleType="fitXY"
                     loadImageFromUrl="@{imageUrl}"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
@@ -60,7 +61,6 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:maxLines="2"
                             android:text="Title: "
                             android:fontFamily="sans-serif-black"
                             android:layout_margin="4dp"
@@ -87,7 +87,6 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:maxLines="2"
                             android:text="Description: "
                             android:fontFamily="sans-serif-black"
                             android:layout_margin="4dp"
@@ -96,7 +95,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     <TextView
-                        android:maxLines="2"
+                        android:maxLines="1"
                         android:text="@{desc}"
                         android:layout_margin="4dp"
                         android:layout_marginStart="24dp"
@@ -107,6 +106,15 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View More"
+                    android:gravity="right"/>
 
             </LinearLayout>
 
